@@ -7,6 +7,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
+import os
 
 '''
 Red underlines? Install the required packages first: 
@@ -20,6 +21,8 @@ pip3 install -r requirements.txt
 
 This will install the packages from requirements.txt for this project.
 '''
+
+MOVIE_API_KEY = os.environ.get("MOVIE_API_KEY")
 
 app = Flask(__name__)
 
@@ -121,7 +124,7 @@ def add():
         # Make a request to the TMDB API to search for the movie
         response = requests.get(
             "https://api.themoviedb.org/3/search/movie",
-            params={"api_key": "9f802bdd0a249e8ad1405a2254f5db2f", "query": movie_title},
+            params={"api_key": MOVIE_API_KEY, "query": movie_title},
         )
         data = response.json()
         if data["results"]:

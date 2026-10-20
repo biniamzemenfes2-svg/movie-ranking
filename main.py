@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 This will install the packages from requirements.txt for this project.
 '''
 
-MOVIE_API_KEY = os.environ.get("MOVIE_API_KEY")
+MOVIE_API_KEY = "9f802bdd0a249e8ad1405a2254f5db2f"
 
 app = Flask(__name__)
 

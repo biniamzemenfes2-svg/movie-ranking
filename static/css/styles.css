@@ -212,3 +212,9 @@
  .release_date {
 	 font-weight: normal;
 }
+
+.content{
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
